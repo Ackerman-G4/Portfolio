@@ -14,9 +14,9 @@ const BackToTop = () => {
     <button
       aria-label="Back to top"
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      className={`back-to-top fixed bottom-6 right-6 z-50 w-10 h-10 rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center shadow-lg hover:-translate-y-0.5 transition-all duration-300 ${show ? 'show' : ''}`}
+      className={`back-to-top fixed bottom-6 right-6 z-50 w-10 h-10 rounded-xl bg-[#006039] dark:bg-emerald-400 text-white dark:text-gray-900 flex items-center justify-center shadow-lg ${show ? 'show' : ''}`}
     >
-      <ArrowUp size={16} />
+      <ArrowUp size={16} className="back-to-top-icon" />
     </button>
   );
 };

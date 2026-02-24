@@ -37,11 +37,11 @@ const ProgressCircle = ({ percent, label, size = 44 }: { percent: number; label:
   return (
     <div ref={wrapRef} className="flex items-center gap-3">
       <svg width={size} height={size} className="shrink-0 -rotate-90">
-        <circle cx={size / 2} cy={size / 2} r={r} fill="none" strokeWidth={3} className="stroke-white/10" />
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none" strokeWidth={3} className="stroke-gray-200 dark:stroke-white/10" />
         <circle ref={circleRef} cx={size / 2} cy={size / 2} r={r} fill="none" strokeWidth={3} strokeLinecap="round" className="stroke-[#D4AF37]" />
       </svg>
       <div className="flex-1 min-w-0">
-        <span className="text-[13px] text-gray-300 block leading-tight">{label}</span>
+        <span className="text-[13px] text-gray-600 dark:text-gray-300 block leading-tight">{label}</span>
         <span className="text-[10px] text-[#D4AF37] font-semibold">{percent}%</span>
       </div>
     </div>
@@ -50,7 +50,7 @@ const ProgressCircle = ({ percent, label, size = 44 }: { percent: number; label:
 
 /* ── Skills Section ── */
 const Skills = () => (
-  <section id="skills" className="py-16 px-5 lg:px-8 bg-gray-950 relative overflow-hidden">
+  <section id="skills" className="py-16 px-5 lg:px-8 section-bg-alt relative overflow-hidden">
     <div className="absolute inset-0 opacity-[0.03] bg-grid-gold" />
     <div className="max-w-6xl mx-auto relative z-10">
       <Reveal className="reveal">
@@ -58,18 +58,18 @@ const Skills = () => (
           <div className="w-8 h-0.5 bg-[#D4AF37] rounded-full" />
           <span className="text-xs font-semibold uppercase tracking-[3px] text-[#D4AF37]">Expertise</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-10 leading-tight">Technical Proficiencies</h2>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-[#006039] dark:text-white section-alt-heading mb-10 leading-tight">Technical Proficiencies</h2>
       </Reveal>
 
       <div className="grid md:grid-cols-3 gap-5">
         {skills.map((cat, i) => (
           <Reveal key={i} className="reveal-scale" delay={i === 1 ? 100 : i === 2 ? 200 : 0}>
-            <div className="group bg-white/4 backdrop-blur-sm rounded-2xl border border-white/10 p-6 hover:border-[#D4AF37]/40 hover:bg-white/7 transition-all duration-500">
+            <div className="group glass-panel rounded-2xl p-6 hover:border-[#D4AF37]/40 transition-all duration-500">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/15 flex items-center justify-center group-hover:scale-110 transition-transform duration-400">
                   <cat.icon size={18} className="text-[#D4AF37]" />
                 </div>
-                <h3 className="text-sm font-bold text-white uppercase tracking-[1.5px]">{cat.title}</h3>
+                <h3 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-[1.5px]">{cat.title}</h3>
               </div>
               <div className="space-y-3">
                 {cat.showProgress
@@ -82,7 +82,7 @@ const Skills = () => (
                           size={11}
                           className={`text-[#D4AF37] opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 stagger-delay-${j}`}
                         />
-                        <span className={`text-[13px] text-gray-400 group-hover:text-gray-200 transition-colors duration-400 stagger-delay-${j}`}>
+                        <span className={`text-[13px] text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-200 transition-colors duration-400 stagger-delay-${j}`}>
                           {item.name}
                         </span>
                       </div>

@@ -13,7 +13,7 @@ const Certifications = () => (
       </Reveal>
 
       <Reveal className="reveal-scale">
-        <div className="relative bg-gray-950 dark:bg-gray-900 rounded-2xl p-8 md:p-10 border border-gray-800 dark:border-gray-700 overflow-hidden">
+        <div className="relative cert-card rounded-2xl p-8 md:p-10 overflow-hidden">
           {/* Gradient top bar */}
           <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-[#D4AF37] via-[#006039] to-[#D4AF37]" />
           <div className="absolute inset-0 opacity-5 bg-dots-gold" />
@@ -26,9 +26,9 @@ const Certifications = () => (
 
             {/* Info */}
             <div className="text-center md:text-left">
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-1">SAP S/4HANA Certified Training</h3>
-              <p className="text-white/50 text-xs uppercase tracking-[2px]">STI College Philippines — 2024</p>
-              <p className="text-gray-400 text-sm mt-3 leading-relaxed max-w-lg">
+              <h3 className="text-xl md:text-2xl font-bold cert-text-primary mb-1">SAP S/4HANA Certified Training</h3>
+              <p className="cert-text-muted text-xs uppercase tracking-[2px]">STI College Philippines — 2024</p>
+              <p className="cert-text-secondary text-sm mt-3 leading-relaxed max-w-lg">
                 Comprehensive training covering enterprise resource planning modules for
                 real-world business process management and optimization.
               </p>
@@ -39,7 +39,7 @@ const Certifications = () => (
               {sapModules.map((mod, i) => (
                 <span
                   key={mod}
-                  className={`text-[10px] font-semibold uppercase tracking-[1.5px] px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white/80 hover:bg-[#D4AF37]/20 hover:text-[#D4AF37] hover:border-[#D4AF37]/30 transition-all duration-300 sap-stagger-${i}`}
+                  className={`text-[10px] font-semibold uppercase tracking-[1.5px] px-4 py-2 rounded-lg cert-badge hover:bg-[#D4AF37]/20 hover:text-[#D4AF37] hover:border-[#D4AF37]/30 transition-all duration-300 sap-stagger-${i}`}
                 >
                   {mod}
                 </span>

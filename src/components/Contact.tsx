@@ -3,7 +3,7 @@ import { socials, companyAddress } from '../data/portfolio-data';
 import Reveal from './Reveal';
 
 const Contact = () => (
-  <section id="contact" className="py-16 px-5 lg:px-8 bg-gray-50 dark:bg-gray-900/50">
+  <section id="contact" className="py-16 px-5 lg:px-8 section-bg-alt">
     <div className="max-w-6xl mx-auto">
       <Reveal className="reveal">
         <div className="flex items-center gap-3 mb-6">
@@ -91,7 +91,7 @@ const Contact = () => (
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center gap-3 p-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[#D4AF37]/40 transition-all duration-300 group/s social-stagger-${i}`}
+                    className={`btn-social-row flex items-center gap-3 p-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[#D4AF37]/40 group/s social-stagger-${i}`}
                   >
                     <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center group-hover/s:bg-[#D4AF37]/20 transition-colors duration-300">
                       <s.icon size={14} className="text-white group-hover/s:text-[#D4AF37] transition-colors duration-300" />

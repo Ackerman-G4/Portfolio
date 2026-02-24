@@ -26,9 +26,9 @@ const Hero = () => {
 
           <Reveal className="reveal" delay={100}>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
-              <span className="text-[#006039] dark:text-emerald-400">EMMAN ROMEL</span>
+              <span className="vinyl-name-green">EMMAN ROMEL</span>
               <br />
-              <span className="text-gray-900 dark:text-white">ANGELES</span>
+              <span className="vinyl-name-dark">ANGELES</span>
             </h1>
           </Reveal>
 
@@ -46,14 +46,14 @@ const Hero = () => {
             <div className="flex items-center gap-4 pt-1 flex-wrap">
               <a
                 href="#projects"
-                className="group inline-flex items-center gap-2 bg-[#006039] text-white px-6 py-3 rounded-lg text-sm font-semibold uppercase tracking-wider hover:bg-[#004d2d] hover:shadow-lg transition-all duration-300"
+                className="btn-primary group inline-flex items-center gap-2 bg-[#006039] text-white px-6 py-3 rounded-lg text-sm font-bold uppercase tracking-wider"
               >
                 View Projects
-                <ArrowRight size={15} className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                <ArrowRight size={15} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white px-6 py-3 rounded-lg text-sm font-semibold uppercase tracking-wider hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-gray-900 transition-all duration-300"
+                className="btn-outline inline-flex items-center gap-2 border-2 border-[#006039] dark:border-emerald-400 text-[#006039] dark:text-emerald-400 px-6 py-3 rounded-lg text-sm font-bold uppercase tracking-wider hover:bg-[#006039] dark:hover:bg-emerald-400 hover:text-white dark:hover:text-gray-900"
               >
                 Get in Touch
               </a>
@@ -65,7 +65,7 @@ const Hero = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    className={`w-9 h-9 rounded-lg bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-[#006039] dark:hover:text-emerald-400 hover:border-[#006039] dark:hover:border-emerald-400 hover:shadow-md transition-all duration-300 social-stagger-${i}`}
+                    className={`btn-icon w-9 h-9 rounded-lg bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-[#006039] dark:hover:text-emerald-400 hover:border-[#006039] dark:hover:border-emerald-400 social-stagger-${i}`}
                   >
                     <s.icon size={15} />
                   </a>
@@ -79,19 +79,19 @@ const Hero = () => {
         <Reveal className="reveal-right lg:col-span-2" delay={200}>
           <div className="glass-panel rounded-2xl p-6 space-y-5">
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-[#006039]/5 dark:bg-emerald-500/10 rounded-xl p-4 text-center">
+              <div className="stat-glow-green bg-[#006039]/5 dark:bg-emerald-500/10 rounded-xl p-4 text-center">
                 <p className="text-2xl font-extrabold text-[#006039] dark:text-emerald-400">2+</p>
                 <p className="text-[10px] uppercase tracking-[2px] text-gray-500 dark:text-gray-400 mt-1">Projects Built</p>
               </div>
-              <div className="bg-[#D4AF37]/10 dark:bg-amber-500/10 rounded-xl p-4 text-center">
+              <div className="stat-glow-gold bg-[#D4AF37]/10 dark:bg-amber-500/10 rounded-xl p-4 text-center">
                 <p className="text-2xl font-extrabold text-[#D4AF37]">5+</p>
                 <p className="text-[10px] uppercase tracking-[2px] text-gray-500 dark:text-gray-400 mt-1">Technologies</p>
               </div>
-              <div className="bg-gray-900/5 dark:bg-white/5 rounded-xl p-4 text-center">
+              <div className="stat-glow-neutral bg-gray-900/5 dark:bg-white/5 rounded-xl p-4 text-center">
                 <p className="text-2xl font-extrabold text-gray-900 dark:text-white">SAP</p>
                 <p className="text-[10px] uppercase tracking-[2px] text-gray-500 dark:text-gray-400 mt-1">Certified</p>
               </div>
-              <div className="bg-[#006039]/5 dark:bg-emerald-500/10 rounded-xl p-4 text-center">
+              <div className="stat-glow-green bg-[#006039]/5 dark:bg-emerald-500/10 rounded-xl p-4 text-center">
                 <p className="text-2xl font-extrabold text-[#006039] dark:text-emerald-400">7</p>
                 <p className="text-[10px] uppercase tracking-[2px] text-gray-500 dark:text-gray-400 mt-1">Medals Won</p>
               </div>

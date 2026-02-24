@@ -40,7 +40,7 @@ const ProgressBar = ({ percent }: { percent: number }) => {
 
 /* ── Learning & Growth Section ── */
 const LearningGrowth = () => (
-  <section className="py-16 px-5 lg:px-8 bg-gray-50 dark:bg-gray-900/30">
+  <section className="py-16 px-5 lg:px-8 section-bg-alt">
     <div className="max-w-6xl mx-auto">
       <Reveal className="reveal">
         <div className="flex items-center gap-3 mb-6">

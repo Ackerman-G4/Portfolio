@@ -26,7 +26,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="page-enter bg-[#FAFAF8] dark:bg-[#0a0a0a] text-gray-900 dark:text-gray-100 selection:bg-[#D4AF37]/20 selection:text-[#006039] dark:selection:text-emerald-400 transition-colors duration-500">
+    <div className="page-enter page-bg text-gray-900 dark:text-gray-100 selection:bg-[#D4AF37]/20 selection:text-[#006039] dark:selection:text-emerald-400 transition-colors duration-500">
       {/* Scroll progress bar */}
       <div className="fixed top-0 left-0 right-0 z-60">
         <div ref={progressRef} className="scroll-progress" />

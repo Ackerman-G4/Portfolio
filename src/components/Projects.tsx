@@ -32,7 +32,7 @@ const Projects = () => (
                   href={proj.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg border border-gray-200 dark:border-white/10 flex items-center justify-center group-hover:border-[#D4AF37] group-hover:rotate-12 transition-all duration-400 shrink-0 ml-4"
+                  className="btn-icon w-9 h-9 rounded-lg border border-gray-200 dark:border-white/10 flex items-center justify-center hover:border-[#D4AF37] shrink-0 ml-4"
                 >
                   <ExternalLink size={13} className="text-gray-400 group-hover:text-[#D4AF37] transition-colors duration-300" />
                 </a>
@@ -60,15 +60,17 @@ const Projects = () => (
                 ))}
               </div>
 
-              <a
-                href={proj.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#006039] dark:bg-emerald-600 text-white text-xs font-semibold uppercase tracking-[1.5px] hover:bg-[#D4AF37] dark:hover:bg-[#D4AF37] hover:scale-105 transition-all duration-300 shadow-sm"
-              >
-                <Github size={14} />
-                <span>View on GitHub</span>
-              </a>
+              {proj.title !== 'Coftea Inventory & POS' && (
+                <a
+                  href={proj.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-github inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#006039] dark:bg-emerald-600 text-white text-xs font-bold uppercase tracking-[1.5px] hover:bg-[#D4AF37] dark:hover:bg-[#D4AF37] shadow-sm"
+                >
+                  <Github size={14} />
+                  <span>View on GitHub</span>
+                </a>
+              )}
             </div>
           </Reveal>
         ))}

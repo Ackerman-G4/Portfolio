@@ -9,7 +9,8 @@ export function useReveal(threshold = 0.12) {
       ([e]) => {
         if (e.isIntersecting) {
           el.classList.add('visible');
-          obs.unobserve(el);
+        } else {
+          el.classList.remove('visible');
         }
       },
       { threshold },
