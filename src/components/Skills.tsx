@@ -1,51 +1,11 @@
-import { useRef, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { skills } from '../data/portfolio-data';
 import Reveal from './Reveal';
 
-/* ── Animated SVG progress circle ── */
-const ProgressCircle = ({ percent, label, size = 44 }: { percent: number; label: string; size?: number }) => {
-  const circleRef = useRef<SVGCircleElement>(null);
-  const wrapRef = useRef<HTMLDivElement>(null);
-  const r = (size - 6) / 2;
-  const circ = 2 * Math.PI * r;
-  const target = circ - (percent / 100) * circ;
-
-  useEffect(() => {
-    const el = wrapRef.current;
-    const circle = circleRef.current;
-    if (!el || !circle) return;
-    circle.style.strokeDasharray = `${circ}`;
-    circle.style.strokeDashoffset = `${circ}`;
-
-    const obs = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
-          setTimeout(() => {
-            circle.style.transition = 'stroke-dashoffset 1.2s cubic-bezier(0.16, 1, 0.3, 1)';
-            circle.style.strokeDashoffset = `${target}`;
-          }, 200);
-          obs.unobserve(el);
-        }
-      },
-      { threshold: 0.2 },
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [circ, target]);
-
-  return (
-    <div ref={wrapRef} className="flex items-center gap-3">
-      <svg width={size} height={size} className="shrink-0 -rotate-90">
-        <circle cx={size / 2} cy={size / 2} r={r} fill="none" strokeWidth={3} className="stroke-gray-200 dark:stroke-white/10" />
-        <circle ref={circleRef} cx={size / 2} cy={size / 2} r={r} fill="none" strokeWidth={3} strokeLinecap="round" className="stroke-[#D4AF37]" />
-      </svg>
-      <div className="flex-1 min-w-0">
-        <span className="text-[13px] text-gray-600 dark:text-gray-300 block leading-tight">{label}</span>
-        <span className="text-[10px] text-[#D4AF37] font-semibold">{percent}%</span>
-      </div>
-    </div>
-  );
+const levelClass = {
+  'Daily Use': 'bg-[#006039]/10 dark:bg-emerald-500/15 text-[#006039] dark:text-emerald-400',
+  Familiar: 'bg-[#D4AF37]/10 text-[#D4AF37]',
+  Learning: 'bg-gray-200 dark:bg-white/10 text-gray-600 dark:text-gray-300',
 };
 
 /* ── Skills Section ── */
@@ -72,21 +32,24 @@ const Skills = () => (
                 <h3 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-[1.5px]">{cat.title}</h3>
               </div>
               <div className="space-y-3">
-                {cat.showProgress
-                  ? cat.items.map((item, j) => (
-                      <ProgressCircle key={j} label={item.name} percent={item.percent ?? 50} />
-                    ))
-                  : cat.items.map((item, j) => (
-                      <div key={j} className="flex items-center gap-2.5">
-                        <ChevronRight
-                          size={11}
-                          className={`text-[#D4AF37] opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 stagger-delay-${j}`}
-                        />
-                        <span className={`text-[13px] text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-200 transition-colors duration-400 stagger-delay-${j}`}>
-                          {item.name}
-                        </span>
-                      </div>
-                    ))}
+                {cat.items.map((item, j) => (
+                  <div key={j} className="flex items-center gap-2.5 justify-between">
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <ChevronRight
+                        size={11}
+                        className={`text-[#D4AF37] opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 stagger-delay-${j}`}
+                      />
+                      <span className={`text-[13px] text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-200 transition-colors duration-400 stagger-delay-${j}`}>
+                        {item.name}
+                      </span>
+                    </div>
+                    {item.level && (
+                      <span className={`text-[10px] font-semibold uppercase tracking-[1.3px] px-2.5 py-1 rounded-md ${levelClass[item.level]}`}>
+                        {item.level}
+                      </span>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           </Reveal>

@@ -1,5 +1,5 @@
 import { GraduationCap, Calendar, MapPin } from 'lucide-react';
-import { education } from '../data/portfolio-data';
+import { aboutParagraphs, education } from '../data/portfolio-data';
 import Reveal from './Reveal';
 
 const About = () => (
@@ -19,15 +19,15 @@ const About = () => (
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#006039] dark:text-emerald-400 mb-4 leading-tight">
               Foundation &amp; Growth
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-5">
-              With a strong foundation in front-end technologies like React and TailwindCSS,
-              along with working knowledge of C#, MySQL, and Firebase, I take a design-first
-              approach to building software. My experience spans from crafting intuitive user
-              interfaces to developing cross-platform desktop applications. I thrive in
-              collaborative environments and am committed to writing clean, maintainable code.
-            </p>
+            <div className="space-y-4 mb-5">
+              {aboutParagraphs.map((paragraph, index) => (
+                <p key={index} className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
             <div className="flex flex-wrap gap-3">
-              {['Front-End Development', 'UI/UX Design', 'Database Management', 'Agile Workflow'].map(tag => (
+              {['Front-End Development', 'UI/UX Design', 'Product Thinking', 'Continuous Learning'].map(tag => (
                 <span
                   key={tag}
                   className="text-[10px] font-semibold uppercase tracking-[1.5px] px-4 py-2 rounded-lg bg-[#006039]/5 dark:bg-emerald-500/10 text-[#006039] dark:text-emerald-400 border border-[#006039]/10 dark:border-emerald-500/20"

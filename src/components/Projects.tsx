@@ -17,8 +17,21 @@ const Projects = () => (
 
       <div className="grid lg:grid-cols-2 gap-5">
         {projects.map((proj, i) => (
-          <Reveal key={i} className="reveal-scale" delay={i === 1 ? 150 : 0}>
+          <Reveal key={proj.title} className="reveal-scale" delay={i * 80}>
             <div className="card-shine group glass-panel rounded-2xl p-6 hover:border-[#D4AF37]/40 hover:shadow-lg transition-all duration-500 hover:-translate-y-1">
+              {(() => {
+                const openLink = proj.liveLink ?? proj.link;
+                return (
+                  <>
+              <div className="mb-5 overflow-hidden rounded-xl border border-gray-200/70 dark:border-white/10">
+                <img
+                  src={proj.previewImage}
+                  alt={proj.previewAlt}
+                  className="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  loading="lazy"
+                />
+              </div>
+
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <span className="text-[10px] font-semibold uppercase tracking-[2px] text-[#D4AF37]">
@@ -28,14 +41,18 @@ const Projects = () => (
                     {proj.title}
                   </h3>
                 </div>
-                <a
-                  href={proj.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-icon w-9 h-9 rounded-lg border border-gray-200 dark:border-white/10 flex items-center justify-center hover:border-[#D4AF37] shrink-0 ml-4"
-                >
-                  <ExternalLink size={13} className="text-gray-400 group-hover:text-[#D4AF37] transition-colors duration-300" />
-                </a>
+                {proj.hasGithub && (
+                  <a
+                    href={openLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${proj.title} project link`}
+                    title={`Open ${proj.title}`}
+                    className="btn-icon w-9 h-9 rounded-lg border border-gray-200 dark:border-white/10 flex items-center justify-center hover:border-[#D4AF37] shrink-0 ml-4"
+                  >
+                    <ExternalLink size={13} className="text-gray-400 group-hover:text-[#D4AF37] transition-colors duration-300" />
+                  </a>
+                )}
               </div>
 
               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">{proj.description}</p>
@@ -52,7 +69,7 @@ const Projects = () => (
               </div>
 
               <div className="space-y-2 mb-5">
-                {proj.objectives.map((obj, j) => (
+                {proj.objectives.slice(0, 3).map((obj, j) => (
                   <div key={j} className="flex items-start gap-2.5">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-1.5 shrink-0" />
                     <span className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{obj}</span>
@@ -60,17 +77,20 @@ const Projects = () => (
                 ))}
               </div>
 
-              {proj.title !== 'Coftea Inventory & POS' && (
+              {proj.hasGithub && (
                 <a
-                  href={proj.link}
+                  href={openLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-github inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#006039] dark:bg-emerald-600 text-white text-xs font-bold uppercase tracking-[1.5px] hover:bg-[#D4AF37] dark:hover:bg-[#D4AF37] shadow-sm"
                 >
-                  <Github size={14} />
-                  <span>View on GitHub</span>
+                  {proj.liveLink ? <ExternalLink size={14} /> : <Github size={14} />}
+                  <span>{proj.liveLink ? 'View Live Site' : 'View on GitHub'}</span>
                 </a>
               )}
+                  </>
+                );
+              })()}
             </div>
           </Reveal>
         ))}

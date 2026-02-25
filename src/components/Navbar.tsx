@@ -6,7 +6,7 @@ import { navLinks } from '../data/portfolio-data';
 const themeOptions: { value: ThemeMode; label: string; icon: typeof Sun }[] = [
   { value: 'light', label: 'Light', icon: Sun },
   { value: 'dark',  label: 'Dark',  icon: Moon },
-  { value: 'glass', label: 'Glass', icon: Droplets },
+  { value: 'glass', label: 'iOS Glass', icon: Droplets },
 ];
 
 const Navbar = () => {
@@ -23,7 +23,7 @@ const Navbar = () => {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 40);
-      const ids = ['contact', 'projects', 'skills', 'about'];
+      const ids = ['contact', 'experience', 'projects', 'skills', 'about'];
       let found = '';
       for (const id of ids) {
         const el = document.getElementById(id);
@@ -66,8 +66,8 @@ const Navbar = () => {
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
           <div className="relative w-9 h-9 rounded-lg border-2 border-[#006039] dark:border-emerald-400 flex items-center justify-center overflow-hidden group-hover:border-[#D4AF37] transition-colors duration-300">
-            <span className="text-sm font-black tracking-tighter text-[#006039] dark:text-emerald-400 group-hover:text-[#D4AF37] transition-colors duration-300" style={{ fontFamily: "'Inter', sans-serif" }}>EA</span>
-            <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#D4AF37]" />
+            <span className="text-sm font-black tracking-tighter text-[#006039] dark:text-emerald-400 group-hover:text-[#D4AF37] transition-colors duration-300">EA</span>
+            <div className="absolute bottom-0 left-0 right-0 h-0.75 bg-[#D4AF37]" />
           </div>
           <div className="hidden sm:flex flex-col -space-y-0.5">
             <span className="text-[11px] font-bold uppercase tracking-[2px] text-gray-900 dark:text-white">Emman</span>

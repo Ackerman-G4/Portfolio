@@ -12,8 +12,8 @@ const Footer = () => (
         <div>
           <div className="flex items-center gap-2.5 mb-3">
             <div className="relative w-9 h-9 rounded-lg border-2 border-[#006039] dark:border-emerald-400 flex items-center justify-center overflow-hidden">
-              <span className="text-sm font-black tracking-tighter text-[#006039] dark:text-emerald-400" style={{ fontFamily: "'Inter', sans-serif" }}>EA</span>
-              <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#D4AF37]" />
+              <span className="text-sm font-black tracking-tighter text-[#006039] dark:text-emerald-400">EA</span>
+              <div className="absolute bottom-0 left-0 right-0 h-0.75 bg-[#D4AF37]" />
             </div>
             <div className="flex flex-col -space-y-0.5">
               <span className="text-[11px] font-bold uppercase tracking-[2px] text-gray-900 dark:text-white">Emman</span>

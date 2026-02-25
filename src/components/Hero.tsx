@@ -45,6 +45,13 @@ const Hero = () => {
           <Reveal className="reveal" delay={300}>
             <div className="flex items-center gap-4 pt-1 flex-wrap">
               <a
+                href="/resume.pdf"
+                download="Resume_CV_Emman.pdf"
+                className="btn-outline inline-flex items-center gap-2 border-2 border-[#D4AF37] text-[#D4AF37] px-6 py-3 rounded-lg text-sm font-bold uppercase tracking-wider hover:bg-[#D4AF37] hover:text-gray-900"
+              >
+                Download CV
+              </a>
+              <a
                 href="#projects"
                 className="btn-primary group inline-flex items-center gap-2 bg-[#006039] text-white px-6 py-3 rounded-lg text-sm font-bold uppercase tracking-wider"
               >
@@ -78,10 +85,21 @@ const Hero = () => {
         {/* Right col (2/5) — Stats panel */}
         <Reveal className="reveal-right lg:col-span-2" delay={200}>
           <div className="glass-panel rounded-2xl p-6 space-y-5">
+            <div className="flex items-center gap-4 rounded-xl bg-white/40 dark:bg-white/5 border border-black/5 dark:border-white/10 p-3">
+              <img
+                src="/profile.jpg"
+                alt="Emman Romel Angeles profile"
+                className="w-16 h-16 rounded-xl object-cover border border-[#D4AF37]/40"
+              />
+              <div>
+                <p className="text-sm font-bold text-gray-900 dark:text-white leading-tight">Emman Romel Angeles</p>
+                <p className="text-[11px] uppercase tracking-[1.8px] text-gray-500 dark:text-gray-400 mt-1">Junior Front-End Developer</p>
+              </div>
+            </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="stat-glow-green bg-[#006039]/5 dark:bg-emerald-500/10 rounded-xl p-4 text-center">
                 <p className="text-2xl font-extrabold text-[#006039] dark:text-emerald-400">2+</p>
-                <p className="text-[10px] uppercase tracking-[2px] text-gray-500 dark:text-gray-400 mt-1">Projects Built</p>
+                <p className="text-[10px] uppercase tracking-[2px] text-gray-500 dark:text-gray-400 mt-1">Deployed Projects</p>
               </div>
               <div className="stat-glow-gold bg-[#D4AF37]/10 dark:bg-amber-500/10 rounded-xl p-4 text-center">
                 <p className="text-2xl font-extrabold text-[#D4AF37]">5+</p>
@@ -92,8 +110,8 @@ const Hero = () => {
                 <p className="text-[10px] uppercase tracking-[2px] text-gray-500 dark:text-gray-400 mt-1">Certified</p>
               </div>
               <div className="stat-glow-green bg-[#006039]/5 dark:bg-emerald-500/10 rounded-xl p-4 text-center">
-                <p className="text-2xl font-extrabold text-[#006039] dark:text-emerald-400">7</p>
-                <p className="text-[10px] uppercase tracking-[2px] text-gray-500 dark:text-gray-400 mt-1">Medals Won</p>
+                <p className="text-2xl font-extrabold text-[#006039] dark:text-emerald-400">4th</p>
+                <p className="text-[10px] uppercase tracking-[2px] text-gray-500 dark:text-gray-400 mt-1">Year BSIT</p>
               </div>
             </div>
             <div className="flex flex-wrap gap-2">

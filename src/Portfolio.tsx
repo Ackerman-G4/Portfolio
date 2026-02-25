@@ -5,6 +5,7 @@ import About from './components/About';
 import Certifications from './components/Certifications';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Experience from './components/Experience';
 import Achievements from './components/Achievements';
 import LearningGrowth from './components/LearningGrowth';
 import Contact from './components/Contact';
@@ -38,6 +39,7 @@ const Portfolio = () => {
       <Certifications />
       <Skills />
       <Projects />
+      <Experience />
       <Achievements />
       <LearningGrowth />
       <Contact />

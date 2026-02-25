@@ -22,9 +22,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     const root = document.documentElement;
     root.classList.remove('dark', 'glass');
     if (mode === 'dark') root.classList.add('dark');
-    if (mode === 'glass') {
-      root.classList.add('dark', 'glass');
-    }
+    if (mode === 'glass') root.classList.add('glass');
     localStorage.setItem('theme', mode);
   }, [mode]);
 

@@ -9,16 +9,17 @@ import {
 } from 'lucide-react';
 
 /* ── Types ── */
+export type SkillLevel = 'Daily Use' | 'Familiar' | 'Learning';
+
 export interface SkillItem {
   name: string;
-  percent?: number;
+  level?: SkillLevel;
 }
 
 export interface SkillCategory {
   icon: LucideIcon;
   title: string;
   items: SkillItem[];
-  showProgress: boolean;
 }
 
 export interface Project {
@@ -28,6 +29,10 @@ export interface Project {
   description: string;
   objectives: string[];
   link: string;
+  liveLink?: string;
+  hasGithub: boolean;
+  previewImage: string;
+  previewAlt: string;
 }
 
 export interface Social {
@@ -50,11 +55,19 @@ export interface LearningItem {
   progress: number;
 }
 
+export interface ExperienceItem {
+  role: string;
+  company: string;
+  period: string;
+  details: string[];
+}
+
 /* ── Constants ── */
 export const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Experience', href: '#experience' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -69,36 +82,33 @@ export const skills: SkillCategory[] = [
   {
     icon: Terminal,
     title: 'Languages',
-    showProgress: true,
     items: [
-      { name: 'C# (.NET MAUI)', percent: 65 },
-      { name: 'Python', percent: 65 },
-      { name: 'SQL & MySQL', percent: 65 },
-      { name: 'Java', percent: 65 },
-      { name: 'TypeScript', percent: 65 },
+      { name: 'C# (.NET MAUI)', level: 'Familiar' },
+      { name: 'Python', level: 'Familiar' },
+      { name: 'SQL & MySQL', level: 'Daily Use' },
+      { name: 'Java', level: 'Learning' },
+      { name: 'TypeScript', level: 'Daily Use' },
     ],
   },
   {
     icon: Cpu,
     title: 'Stack & Frameworks',
-    showProgress: true,
     items: [
-      { name: 'React & Tailwind', percent: 65 },
-      { name: 'Firebase', percent: 60 },
-      { name: 'Agile Methodology', percent: 60 },
-      { name: 'MVVM Architecture', percent: 60 },
-      { name: 'Git & Version Control', percent: 70 },
+      { name: 'React & Tailwind', level: 'Daily Use' },
+      { name: 'Firebase', level: 'Familiar' },
+      { name: 'Agile Methodology', level: 'Familiar' },
+      { name: 'MVVM Architecture', level: 'Familiar' },
+      { name: 'Git & Version Control', level: 'Daily Use' },
     ],
   },
   {
     icon: Layers,
     title: 'Design & Tools',
-    showProgress: false,
     items: [
-      { name: 'Figma & Moqups' },
-      { name: 'Visual Studio & Laragon' },
-      { name: 'System Troubleshooting' },
-      { name: 'Technical Documentation' },
+      { name: 'Figma & Moqups', level: 'Daily Use' },
+      { name: 'Visual Studio & Laragon', level: 'Daily Use' },
+      { name: 'System Troubleshooting', level: 'Familiar' },
+      { name: 'Technical Documentation', level: 'Familiar' },
     ],
   },
 ];
@@ -117,6 +127,10 @@ export const projects: Project[] = [
       'Streamlined financial tracking and material monitoring',
     ],
     link: 'https://github.com/Ackerman-G4',
+    liveLink: 'https://ave-ventures.web.app/',
+    hasGithub: true,
+    previewImage: '/previews/ave-ventures.svg',
+    previewAlt: 'AVE Ventures dashboard preview',
   },
   {
     title: 'Coftea Inventory & POS',
@@ -131,7 +145,32 @@ export const projects: Project[] = [
       'UI/UX designed with Figma and Moqups',
     ],
     link: 'https://github.com/Ackerman-G4',
+    hasGithub: false,
+    previewImage: '/previews/coftea-pos.svg',
+    previewAlt: 'Coftea Inventory and POS desktop app preview',
   },
+  {
+    title: 'Portfolio Website v2',
+    tech: ['React', 'TypeScript', 'TailwindCSS', 'Vite'],
+    category: 'Personal Project',
+    description:
+      'A responsive developer portfolio focused on performance, readability, and clear project storytelling.',
+    objectives: [
+      'Section-based architecture with reusable UI components',
+      'Theme support and subtle glassmorphism polish',
+      'SEO metadata and branded assets for sharing',
+    ],
+    link: 'https://github.com/Ackerman-G4',
+    hasGithub: true,
+    previewImage: '/previews/portfolio-v2.svg',
+    previewAlt: 'Portfolio website homepage preview',
+  },
+];
+
+export const aboutParagraphs = [
+  'I started coding because I enjoyed turning ideas into real, usable tools. During my ICT strand and early BSIT years, I became curious about how software could solve everyday workflow problems for teams and small businesses.',
+  'What motivates me most is building interfaces that are easy to understand and pleasant to use. I focus on clean front-end implementation, practical UI/UX decisions, and maintaining code that is readable for future collaborators.',
+  'As a junior developer, my goal is to keep shipping complete projects, strengthen my React and TypeScript depth, and contribute to production teams where I can learn good engineering practices while delivering dependable features.'
 ];
 
 export const sapModules = ['HCM', 'WM', 'PS', 'EAM', 'CS', 'QM'];
@@ -162,6 +201,29 @@ export const learningItems: LearningItem[] = [
   { title: 'CSS', description: 'Advanced styling, animations, and responsive design patterns', progress: 70 },
   { title: 'Database', description: 'MySQL optimization, Firebase real-time data, and schema design', progress: 60 },
   { title: 'TypeScript', description: 'Type safety, generics, and advanced patterns for scalable code', progress: 55 },
+];
+
+export const experiences: ExperienceItem[] = [
+  {
+    role: 'Front-End Developer (Capstone Team)',
+    company: 'STI College Ortigas-Cainta',
+    period: '2025 — 2026',
+    details: [
+      'Co-developed the Coftea Inventory & POS system with a focus on UI flow and usability.',
+      'Collaborated on feature planning, testing, and documentation across academic milestones.',
+      'Helped translate Figma/Moqups concepts into a working desktop application interface.'
+    ],
+  },
+  {
+    role: 'Project Developer (Academic & Personal Builds)',
+    company: 'Independent / Student Projects',
+    period: '2023 — Present',
+    details: [
+      'Built and iterated on small complete web applications using React and TypeScript.',
+      'Practiced responsive UI implementation, accessibility basics, and reusable component structure.',
+      'Used Git workflows to track progress and maintain project history during iteration.'
+    ],
+  },
 ];
 
 export const companyAddress =

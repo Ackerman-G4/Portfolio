@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#0f172a"/>
+  <rect x="28" y="28" width="744" height="394" rx="16" fill="#111827" stroke="#1f2937"/>
+  <rect x="48" y="56" width="180" height="24" rx="6" fill="#34d399" opacity="0.85"/>
+  <rect x="48" y="100" width="704" height="16" rx="6" fill="#374151"/>
+  <rect x="48" y="128" width="704" height="16" rx="6" fill="#374151"/>
+  <rect x="48" y="176" width="220" height="210" rx="10" fill="#1f2937"/>
+  <rect x="290" y="176" width="220" height="210" rx="10" fill="#1f2937"/>
+  <rect x="532" y="176" width="220" height="210" rx="10" fill="#1f2937"/>
+  <text x="56" y="78" font-family="Inter, Arial" font-size="13" fill="#052e16">AVE Ventures Preview</text>
+</svg>

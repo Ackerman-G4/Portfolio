@@ -26,8 +26,11 @@ body {
   color: #f3f4f6;
 }
 .glass .page-bg {
-  background: linear-gradient(135deg, #0c1a14 0%, #0a0a0a 40%, #1a0f2e 100%);
-  color: #e2e8f0;
+  background:
+    radial-gradient(1200px 650px at -10% -20%, rgba(0, 122, 255, 0.10), transparent 52%),
+    radial-gradient(900px 520px at 115% -10%, rgba(88, 86, 214, 0.10), transparent 50%),
+    linear-gradient(180deg, #f2f2f7 0%, #ececf1 100%);
+  color: #1c1c1e;
 }
 
 /* Alternating section bg (Skills, LearningGrowth, Contact) */
@@ -38,7 +41,7 @@ body {
   background: #111111;
 }
 .glass .section-bg-alt {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.38);
 }
 
 /* Footer */
@@ -49,12 +52,12 @@ body {
   background: #050505;
 }
 .glass .footer-bg {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.42);
 }
 
 /* Section heading override for alt sections */
 .section-alt-heading { /* light default handled by tailwind */ }
-.glass .section-alt-heading { color: #e2e8f0 !important; }
+.glass .section-alt-heading { color: #111827 !important; }
 
 /* ════════════════════════════════════════════════
    THEME: Nav
@@ -67,8 +70,11 @@ body {
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.4);
 }
 .glass .nav-scrolled {
-  background: rgba(10, 20, 15, 0.6);
-  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.56);
+  -webkit-backdrop-filter: saturate(180%) blur(22px);
+  backdrop-filter: saturate(180%) blur(22px);
+  border-bottom: 1px solid rgba(60, 60, 67, 0.18);
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.12);
 }
 
 /* Mobile menu bg */
@@ -79,7 +85,10 @@ body {
   background: rgba(10, 10, 10, 0.95);
 }
 .glass .mobile-menu-bg {
-  background: rgba(10, 20, 15, 0.9);
+  background: rgba(255, 255, 255, 0.66);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  backdrop-filter: saturate(180%) blur(18px);
+  border-color: rgba(60, 60, 67, 0.18);
 }
 
 /* Theme dropdown panel */
@@ -92,10 +101,10 @@ body {
   border-color: rgba(255, 255, 255, 0.1);
 }
 .glass .theme-dropdown-panel {
-  background: rgba(10, 20, 15, 0.9);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  backdrop-filter: saturate(180%) blur(18px);
+  border-color: rgba(60, 60, 67, 0.18);
 }
 
 @keyframes dropdown-enter {
@@ -107,37 +116,62 @@ body {
 /* ════════════════════════════════════════════════
    GLASS MODE: Utility classes
    ════════════════════════════════════════════════ */
-.glass .glass-text-green   { color: #34d399 !important; }
-.glass .glass-text-primary { color: #e2e8f0 !important; }
-.glass .glass-text-secondary { color: #94a3b8 !important; }
-.glass .glass-bg-control   { background: rgba(255, 255, 255, 0.08) !important; }
-.glass .glass-bg-bar        { background: white !important; }
+.glass .glass-text-green   { color: #007aff !important; }
+.glass .glass-text-primary { color: #1c1c1e !important; }
+.glass .glass-text-secondary { color: rgba(60, 60, 67, 0.78) !important; }
+.glass .glass-bg-control   {
+  background: rgba(255, 255, 255, 0.58) !important;
+  border: 1px solid rgba(60, 60, 67, 0.16);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  backdrop-filter: saturate(180%) blur(12px);
+}
+.glass .glass-bg-bar        { background: rgba(28, 28, 30, 0.9) !important; }
+
+.glass .btn-primary {
+  background: #007aff;
+  box-shadow: 0 10px 24px rgba(0, 122, 255, 0.24);
+}
+.glass .btn-primary:hover {
+  background: #0a84ff;
+  box-shadow: 0 12px 28px rgba(10, 132, 255, 0.30);
+}
+.glass .btn-outline {
+  border-color: rgba(0, 122, 255, 0.55);
+  color: #007aff;
+}
+.glass .btn-outline:hover {
+  border-color: #0a84ff;
+  color: #0a84ff;
+}
 
 /* ════════════════════════════════════════════════
    GLASS PANEL (cards)
    ════════════════════════════════════════════════ */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.8);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.86);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.04);
 }
 .dark .glass-panel {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.035);
+  border-color: rgba(255, 255, 255, 0.075);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.18);
 }
 .glass .glass-panel {
-  background: rgba(255, 255, 255, 0.05);
-  -webkit-backdrop-filter: blur(24px);
-  backdrop-filter: blur(24px);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.58);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-color: rgba(60, 60, 67, 0.18);
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.12),
+    0 2px 6px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
 }
 
 /* Glass mode inherits dark-like text colors */
-.glass :is(h1, h2, h3, h4, h5, h6) { color: #f1f5f9; }
+.glass :is(h1, h2, h3, h4, h5, h6) { color: #111827; }
 .glass p, .glass span, .glass a { color: inherit; }
 
 /* ── Page enter animation ── */
@@ -252,7 +286,7 @@ body {
 .nav-link:hover::after, .nav-link.active::after { width: 100%; }
 .nav-link.active { color: #006039 !important; }
 .dark .nav-link.active { color: #34d399 !important; }
-.glass .nav-link.active { color: #34d399 !important; }
+.glass .nav-link.active { color: #007aff !important; }
 
 /* ── Card shine sweep ── */
 .card-shine { position: relative; overflow: hidden; }
