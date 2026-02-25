@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react';
-import { Mail, MapPin, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import { socials, companyAddress } from '../data/portfolio-data';
 import Reveal from './Reveal';
 
@@ -47,6 +47,12 @@ const Contact = () => {
                     label: 'Email',
                     value: 'emmanangeles.04@gmail.com',
                     href: 'mailto:emmanangeles.04@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Emman%2C%0A%0A',
+                  },
+                  {
+                    icon: Phone,
+                    label: 'Phone',
+                    value: '+63 920 551 5499',
+                    href: 'tel:+639205515499',
                   },
                   { icon: MapPin, label: 'Company', value: companyAddress, href: null as string | null },
                 ].map((item, i) => {

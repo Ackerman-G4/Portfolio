@@ -27,7 +27,16 @@ const Projects = () => (
                 <img
                   src={proj.previewImage}
                   alt={proj.previewAlt}
-                  className="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  onError={(event) => {
+                    const target = event.currentTarget;
+                    target.onerror = null;
+                    target.src = '/favicon.svg';
+                  }}
+                  className={`w-full h-44 transition-transform duration-500 group-hover:scale-[1.02] ${
+                    proj.title === 'Portfolio Website v2'
+                      ? 'object-contain bg-white/65 dark:bg-white/5 p-3'
+                      : 'object-cover'
+                  }`}
                   loading="lazy"
                 />
               </div>

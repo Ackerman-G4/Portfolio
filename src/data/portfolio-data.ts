@@ -129,8 +129,8 @@ export const projects: Project[] = [
     link: 'https://github.com/Ackerman-G4',
     liveLink: 'https://ave-ventures.web.app/',
     hasGithub: true,
-    previewImage: '/previews/ave-ventures.svg',
-    previewAlt: 'AVE Ventures dashboard preview',
+    previewImage: '/AVE-Ventures.jpg',
+    previewAlt: 'AVE Ventures project preview',
   },
   {
     title: 'Coftea Inventory & POS',
@@ -146,8 +146,8 @@ export const projects: Project[] = [
     ],
     link: 'https://github.com/Ackerman-G4',
     hasGithub: false,
-    previewImage: '/previews/coftea-pos.svg',
-    previewAlt: 'Coftea Inventory and POS desktop app preview',
+    previewImage: '/Coftea.png',
+    previewAlt: 'Coftea project preview',
   },
   {
     title: 'Portfolio Website v2',
@@ -162,8 +162,8 @@ export const projects: Project[] = [
     ],
     link: 'https://github.com/Ackerman-G4',
     hasGithub: true,
-    previewImage: '/previews/portfolio-v2.svg',
-    previewAlt: 'Portfolio website homepage preview',
+    previewImage: '/previews/portfolio-logo-glass.svg',
+    previewAlt: 'Portfolio website logo preview',
   },
 ];
 
